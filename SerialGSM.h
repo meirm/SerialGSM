@@ -32,7 +32,8 @@ public:
   boolean verbose;
   char sendernumber[PHONESIZE + 1];
   char rcpt[PHONESIZE + 1];
-  char message[160];
+  char outmessage[160];
+  char inmessage[160];
   
 protected:
   unsigned long lastrec;
