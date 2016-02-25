@@ -27,6 +27,21 @@ void SerialGSM::FwdSMS2Serial(){
   this->ReadLine();
 }
 
+void SerialGSM::answer(){
+  this->println("ATA");
+}
+
+void SerialGSM::hungup(){
+  this->println("ATH");
+}
+
+void SerialGSM::dial(char * pnumber){
+  this->Rcpt(pnumber);
+  this->print("ATD");
+  this->println(pnumber);
+  //this->println('\r');
+}
+
 void SerialGSM::SendSMS(char * cellnumber,char * outmsg){
   this->Rcpt(cellnumber);
   if (verbose) Serial.println(rcpt);
@@ -179,7 +194,7 @@ void SerialGSM::Message(char * var1){
 
 void SerialGSM::Boot(){
   int counter=0;
-  while(counter++ < 15){
+  while(counter++ < BOOTTIME){
     if (verbose) Serial.print(".");
     delay(1000);
   }
