@@ -21,8 +21,8 @@ void SerialGSM::FwdSMS2Serial(){
   this->println("AT+CMGF=1"); // set SMS mode to text
   delay(200);
   this->ReadLine();
-  Serial.println("AT+CNMI=2,2,0,0,0"); // set module to send SMS data to serial out upon receipt 
-  this->println("AT+CNMI=2,2,0,0,0"); // set module to send SMS data to serial out upon receipt 
+  Serial.println("AT+CNMI=3,3,0,0"); // set module to send SMS data to serial out upon receipt 
+  this->println("AT+CNMI=3,3,0,0"); // set module to send SMS data to serial out upon receipt 
   delay(200);
   this->ReadLine();
 }
