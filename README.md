@@ -5,7 +5,8 @@ Released under GPL3
 
 SerialSMS is a library for arduino to be used with a GPRS/GSM shield.
 
-The library allows you to send/receive SMS with simple calls.
+The library allows you to send/receive SMS with simple OOP methods.
+The library also allows you to receive or make phone calls.
 
 Install:
 ========
